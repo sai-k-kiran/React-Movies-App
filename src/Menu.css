@@ -1,0 +1,40 @@
+.menu {
+}
+.carousel {
+  width: 80vw;
+  height: 450px;
+  margin: 50px auto;
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+.movie-img {
+  width: 600px;
+  margin: 0 60px;
+  height: 338px;
+  object-fit: cover;
+  border: 4px solid rgb(100, 100, 100);
+  border-radius: 5px;
+}
+article {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: cubic-bezier(0.13, 0.13, 0.51, 1.35) 0.5s;
+}
+article.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+article.last {
+  transform: translateX(-100%);
+}
+article.next {
+  transform: translateX(100%);
+}
+.text {
+  color: red;
+  font-size: 38px;
+}
