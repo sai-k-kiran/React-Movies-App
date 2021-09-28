@@ -8,14 +8,13 @@ import Login from './components/loginForm'
 import Register from './components/register'
 import NotFound from './components/notFound'
 import Menu from './Menu';
+import Movie from './movie'
 
 function App() {
   return (
     <div className="App">
-      <Menu />
-     {/* <Home />
-     <Comp title='Top movies of all time' fetchUrl={requests.top} main_row={true}/>
-     <Comp title='Playing Now' fetchUrl={requests.now_playing}/> 
+    <Login />  
+ {/*
      <Switch>
        <Route path='/login' component={Login}></Route>
        <Route path='/register' component={Register}></Route>

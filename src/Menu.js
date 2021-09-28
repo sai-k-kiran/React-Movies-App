@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 import './Menu.css'
 import Comp from './comp';
 import { FaStarHalfAlt } from "react-icons/fa";
-import { MdLocalMovies } from 'react-icons/md';
+
 const baseURL = 'https://image.tmdb.org/t/p/original';
 
 function Menu() {
@@ -36,23 +36,19 @@ function Menu() {
         }
       }, [index, movie])
     
-      useEffect(()=>{
-        let slider = setInterval(()=>{
-          setIndex(index + 1)
-        }, 5000);
-        return()=> clearInterval(slider)
-      })
-      console.log(index)
+    //   useEffect(()=>{
+    //     let slider = setInterval(()=>{
+    //       setIndex(index + 1)
+    //     }, 5000);
+    //     return()=> clearInterval(slider)
+    //   })
+
         return(
-            <div
-                style={{
-                backgroundSize: 'cover',
-                backgroundImage: `url()`,
-                backgroundPosition: 'center center'
-                }}>
+            <div>
+                <div className='menu'>
                     <Navbar />
+                    <div className='block'></div>
                     <div className='carousel'>
-                    
                         {movie.map((movie, m_index) => {
                             let positionClass = 'next'
                             if(m_index === index){
@@ -66,19 +62,21 @@ function Menu() {
                                 <img className='movie-img' 
                                 src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
                                 alt={movie.title || movie.original_name} />
-                                <h2 className='text'>{m_index}</h2>    
+                                <div className='movie-info'>
+                                    <h2>{movie.title || movie.original_name}</h2>
+                                    <p><FaStarHalfAlt className='star-icon'/> {movie.vote_average}/10</p>
+                                </div>
                             </article>
-                
                             )
                         })}
-        
                     </div>
-                
-                <Comp title='Netflix Originals' fetchUrl={requests.netflixOriginals} />
-                <Comp title='Prime Originals' fetchUrl={requests.primeOriginals} />
+                    
+                </div>
+                {/* <Comp title='Netflix Originals' fetchUrl={requests.netflixOriginals} tv={true} />
+                <Comp title='Prime Originals' fetchUrl={requests.primeOriginals} tv={true}/>
                 <Comp title='Popular' fetchUrl={requests.popular} />
                 <Comp title='Top of all time' fetchUrl={requests.top} />
-                <Comp title='Currently airing' fetchUrl={requests.now_playing} />
+                <Comp title='Currently airing' fetchUrl={requests.now_playing} />    */}
             </div>
         )
     }

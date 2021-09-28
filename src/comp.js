@@ -7,7 +7,7 @@ import {Route, Redirect, Switch, Link} from 'react-router-dom'
 
 const baseURL = 'https://image.tmdb.org/t/p/original';
 
-function Comp({title, fetchUrl}) {
+function Comp({title, fetchUrl, tv}) {
     const [movies, setMovies] = useState([]);
     
     const scroll_ref = useRef()
@@ -30,22 +30,24 @@ function Comp({title, fetchUrl}) {
             <hr className='underline'></hr>
             <div className='row_posters' ref={scroll_ref}>
                     {movies.map(movie => (
-                        <div className='movie-element'>
-                            <img key={movie.id} 
-                            className='poster' 
-                            src={`${baseURL}${ movie.backdrop_path}`} 
+                        <Link to={`/${movie.id}`}>
+                            <div className='movie-element'  key={movie.id}>
+                            <img 
+                            className={tv? 'tv_poster': 'movie_poster'} 
+                            src={`${baseURL}${tv ? movie.poster_path : movie.backdrop_path}`} 
                             alt={movie.title} 
                             />
-                            <div className='info-text'>
+                             <div className={tv? 'tv-info-text' : 'info-text'}>
                                 <h3>{movie.title || movie.original_name}</h3>
                             </div>
                         </div>
+                        </Link>
                     ))}
                 <div className='arrows'>
-                    <button className="arrow left" onClick={()=>scroll(-1000)}>
+                    <button className={tv? 'tv-arrow left': 'arrow left'} onClick={()=>scroll(-1000)}>
                         <MdKeyboardArrowLeft className='md-icon'/>
                     </button>
-                    <button className="arrow right"  onClick={() => scroll(+1000)}>
+                    <button className={tv? 'tv-arrow right': 'arrow right'}  onClick={() => scroll(+1000)}>
                         < MdKeyboardArrowRight className='md-icon'/>
                     </button>
                 </div>
