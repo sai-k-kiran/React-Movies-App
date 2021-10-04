@@ -1,0 +1,64 @@
+.fav {
+  background-color: black;
+  height: 100vh;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+}
+.fav-back {
+  height: auto;
+  background-color: black;
+  padding-bottom: 5%;
+}
+.fav-text {
+  margin: 5% 0 5% 0;
+  color: white;
+  text-align: center;
+}
+.fav-text h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+.grid-block {
+  width: 80%;
+  margin: 30px auto 30px auto;
+}
+.fav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 60px;
+  align-items: center;
+}
+.fav-img {
+  display: block;
+  border: 2px solid rgb(68, 68, 68);
+  border-radius: 5px;
+  height: 300px;
+  width: 200px;
+  transition: 500ms;
+  color: white;
+}
+.fav-img:hover {
+  transform: scale(1.08);
+}
+.fav-map {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+@media screen and (max-width: 725px) {
+  .fav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 40px;
+    align-items: center;
+  }
+  .fav-img {
+    height: 230px;
+    width: 153px;
+  }
+  .fav-text h1 {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+}

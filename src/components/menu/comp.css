@@ -8,6 +8,11 @@
   text-align: center;
   margin: 20px 0;
 }
+@media screen and (max-width: 725px) {
+  .row h3 {
+    font-size: 18px;
+  }
+}
 .row_posters {
   display: flex;
   overflow: hidden;
@@ -21,18 +26,32 @@
   border-radius: 5px;
   object-fit: contain;
   margin: 20px 30px 20px 0;
-  max-height: 400px;
+  height: 400px;
   transition: transform 400ms;
-}
-.tv_poster:hover {
 }
 .movie_poster {
   border-radius: 10px;
   object-fit: contain;
   margin-right: 30px;
   margin: 20px 30px 20px 0;
-  max-height: 200px;
+  height: 200px;
   transition: transform 400ms;
+}
+@media screen and (max-width: 976px) {
+  .tv_poster {
+    height: 300px;
+  }
+  .movie_poster {
+    height: 150px;
+  }
+}
+@media screen and (max-width: 725px) {
+  .tv_poster {
+    height: 200px;
+  }
+  .movie_poster {
+    height: 110px;
+  }
 }
 .underline {
   display: flex;
@@ -64,6 +83,7 @@
   color: white;
   cursor: pointer;
 }
+
 .left {
   left: 0;
   background: -webkit-linear-gradient(
@@ -82,8 +102,33 @@
     rgba(0, 0, 0, 1)
   );
 }
+@media screen and (max-width: 976px) {
+  .arrow {
+    height: 170px;
+    width: 90px;
+  }
+  .tv-arrow {
+    height: 320px;
+    width: 90px;
+  }
+}
+@media screen and (max-width: 725px) {
+  .arrow {
+    height: 140px;
+    width: 60px;
+  }
+  .tv-arrow {
+    height: 220px;
+    width: 60px;
+  }
+}
 .md-icon {
   font-size: 30px;
+}
+@media screen and (max-width: 725px) {
+  .md-icon {
+    font-size: 20px;
+  }
 }
 .movie-element {
   position: relative;
@@ -104,7 +149,7 @@
   background: transparent;
   border-radius: 10px;
   height: 400px;
-  width: 267px;
+  width: 270px;
   position: absolute;
   top: 20px;
   left: 0;
@@ -122,4 +167,41 @@
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 976px) {
+  .info-text {
+    border-radius: 8px;
+    height: 150px;
+    width: 266px;
+  }
+  .tv-info-text {
+    border-radius: 8px;
+    height: 300px;
+    width: 200px;
+  }
+  .info-text h3,
+  .tv-info-text h3 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 725px) {
+  .info-text {
+    border-radius: 8px;
+    height: 110px;
+    width: 196px;
+  }
+  .tv-info-text {
+    border-radius: 8px;
+    height: 200px;
+    width: 133.4px;
+  }
+  .info-text h3 {
+    font-size: 16px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .tv-info-text h3 {
+    font-size: 16px;
+  }
 }

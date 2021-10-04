@@ -1,22 +1,22 @@
 .background {
-  height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(39, 88, 2, 0.575)),
     url("https://lionsgate.brightspotcdn.com/d0/f1/f32451e940a0be2c29128243529a/catch-the-bullet-movies-he-gallery-07.jpg");
   background-size: cover;
   background-color: rgba(1, 1, 1, 0.6);
 }
-.container {
+.home-container {
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  top: 20%;
+  margin-top: 10%;
   text-align: center;
 }
 .container-text h1 {
   font-size: 84px;
 }
+
 .container-text p {
   line-height: 1.8;
   width: 40%;
@@ -24,22 +24,64 @@
   margin-right: auto;
   font-size: 18px;
 }
+
 .btn {
   background-color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+@media screen and (max-width: 725px) {
+  .btn {
+    margin-top: 20px;
+    padding: 5px 10px;
+  }
+}
+.btn:hover {
+  background-color: rgb(190, 190, 190);
+}
+.ex {
+  padding: 20px 0;
+}
+.ex-btn {
+  background-color: white;
+  text-decoration: none;
   cursor: pointer;
   border: none;
   border-radius: 3px;
   padding: 10px 15px;
   font-size: 16px;
   font-weight: 600;
-  margin-top: 30px;
 }
-.btn:hover {
+.ex-btn:hover {
   background-color: rgb(190, 190, 190);
+}
+@media screen and (max-width: 976px) {
+  .container-text h1 {
+    font-size: 62px;
+  }
+  .container-text p {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 725px) {
+  .container-text h1 {
+    font-size: 34px;
+  }
+  .container-text p {
+    width: 80%;
+    font-size: 14px;
+  }
+  .ex-btn {
+    padding: 6px 10px;
+  }
 }
 .container-icon {
   position: relative;
-  top: 20%;
   margin-top: 10%;
 }
 .icon {
@@ -67,7 +109,7 @@
 .shadow {
   position: relative;
   top: 20%;
-  height: 80px;
+  height: 60px;
   background-image: linear-gradient(
     180deg,
     transparent,

@@ -12,6 +12,3 @@ const instance = axios.create({
     https: config
 })
 export default instance
-
-// whenever we use axios, it will auto generate the baseUrl and whatever we pass as an arg to the axios will
-// be appended to the baseUrl.

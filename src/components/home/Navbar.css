@@ -12,6 +12,12 @@
   cursor: pointer;
   float: right;
 }
+@media screen and (max-width: 725px) {
+  .brand-logo {
+    height: 50px;
+    width: 100px;
+  }
+}
 .nav-links {
   margin-right: 5%;
 }
@@ -33,4 +39,10 @@
   color: rgb(0, 60, 255);
   background-color: rgba(255, 255, 255);
   transition: 0.4s;
+}
+@media screen and (max-width: 725px) {
+  .nav-links a {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
 }

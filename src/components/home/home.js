@@ -1,41 +1,37 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Navbar from './Navbar';
 import './home.css'
+import requests from '../requests/requests';
+import Comp from '../menu/comp';
+import Footer from './footer';
 import {FaRegArrowAltCircleDown} from 'react-icons/fa'
+import {Link} from 'react-router-dom'
 
 function Home() {
-    return ( 
+    return (
+        <> 
         <div className='background'>
             <Navbar />
-            <div className='container'>
+            <div className='home-container'>
                 <div className="container-text">
                     <h1>Silver Screen on the go</h1>
                     <p>Search for your favorite movies and TV shows from the massive library including        different platforms across the internet. From Most Popular of all time to currently trending, catch all the shows at home on the go.</p>
-                    <button className='btn'>Explore</button>
+                    <div className='ex'>
+                        <Link to='/menu' className='ex-btn'>Explore</Link>
+                    </div>
                 </div>
             </div>
             <div className='container-icon'>
                 <div className='shadow'>
                     <FaRegArrowAltCircleDown className='icon'/></div>
             </div>
-            
         </div>
+        <Comp title='Netflix Originals' fetchUrl={requests.netflixOriginals} tv={true} />
+        <Comp title='Popular Movies' fetchUrl={requests.popular} />
+        <Footer />
+        </>
     )
 }
  
 export default Home;
 
-//  `url('https://image.tmdb.org/t/p/original/${movie?.backdrop_path}')`
-
-    // useEffect(()=>{
-    //     async function fetchData() {
-    //         const request = await axios.get(requests.trending)
-    //         setMovie(
-    //             request.data.results[Math.floor(Math.random()* request.data.results.length)])
-    //         return request;
-    //     }
-    //     fetchData()
-    // }, [])
-
-                    {/* <h1>{movie?.title || movie?.name || movie?.original_name}</h1>
-                <h3>{truncate(movie?.overview , 150)}</h3> */}
