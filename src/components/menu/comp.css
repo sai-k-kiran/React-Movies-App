@@ -18,9 +18,15 @@
   overflow: hidden;
   overflow: auto;
   overflow-y: hidden;
-  overflow-x: hidden;
+  overflow-x: auto;
   scroll-behavior: smooth;
   margin-left: 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }
 .tv_poster {
   border-radius: 5px;

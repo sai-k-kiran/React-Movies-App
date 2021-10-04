@@ -32,12 +32,12 @@ function Menu() {
         }
       }, [index, movie.length])
     
-      useEffect(()=>{
-        let slider = setInterval(()=>{
-          setIndex(index + 1)
-        }, 5000);
-        return()=> clearInterval(slider)
-      })
+    //   useEffect(()=>{
+    //     let slider = setInterval(()=>{
+    //       setIndex(index + 1)
+    //     }, 5000);
+    //     return()=> clearInterval(slider)
+    //   })
 
         return(
             <div>

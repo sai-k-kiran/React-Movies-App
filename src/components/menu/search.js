@@ -8,7 +8,7 @@ const Search = () => {
 
     return ( 
         <>
-        <div className='serach-block'>
+        <div>
             <input className='search' value={keyword} 
             onChange={(e)=> setKeyword(e.target.value)}
             placeholder='Search'/>

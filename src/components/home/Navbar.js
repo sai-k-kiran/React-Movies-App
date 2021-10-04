@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.css'
+import { FaBars } from 'react-icons/fa'
+import logo from './home2.svg'
+import {MdClose} from 'react-icons/md'
+import Sidebar from './sidebar';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
 import Search from '../menu/search';
-import logo from './home2.svg'
 
 const Navbar = () => {
+    const [sidebar, setSidebar] = useState(false)
     const {currentuser, logout} = useAuth()
     const history = useHistory()
 
@@ -16,9 +20,10 @@ const Navbar = () => {
         } catch {
             alert("Failed to log out")
         }
-    }
+    } 
+
     return ( 
-        <nav className='nav'>
+        <nav className='navbar'>
             <div className='brand'> 
                 <Link to='/'>
                 <img className='brand-logo'
@@ -26,28 +31,46 @@ const Navbar = () => {
                 alt='Logo'/>
                 </Link>
             </div>
-            <div className='nav-links'>
-                <ul>
-                    <li>
-                        {currentuser ? <Search /> : null}
-                    </li>
-                    <li>
-                        {currentuser ? null : <Link to='/register' className='links'>Register</Link>}
-                    </li>
-                    <li>
-                        {currentuser ? null : <Link to='/login' className='links'>Login</Link>}
-                    </li>
-                    <li>
-                        {currentuser ?  <Link to='/favorite' className='links'>My list</Link> : null}
-                    </li>
-                    <li>
-                        {currentuser ? <button onClick={handleLogout}
-                        className='links btn' type='button'>Logout</button> : null }
-                    </li>
-                </ul>
-            </div>
+            <button className='bars'
+            onClick={()=> setSidebar(!sidebar)}><FaBars /></button>
+            <div className={sidebar ? 'navbar-links actives' : 'navbar-links'}>
+                <button className='cross'
+                    onClick={()=> setSidebar(!sidebar)}><MdClose /></button>
+                    <ul className='links-menu'>
+                        <li>
+                            {currentuser ? <Search /> : null}
+                        </li>
+                        <li>
+                            {currentuser ? null : <Link to='/register' className='links'>Register</Link>}
+                        </li>
+                        <li>
+                            {currentuser ? null : <Link to='/login' className='links'>Login</Link>}
+                        </li>
+                        <li>
+                            {currentuser ?  <Link to='/favorite' className='links'>My list</Link> : null}
+                        </li>
+                        <li>
+                            {currentuser ? <Link onClick={handleLogout}
+                            className='links'>Logout</Link> : null }
+                        </li>
+                    </ul>
+                </div>
         </nav>
      )
 }
  
 export default Navbar;
+
+{/* <nav className='nav'>
+            <div className='brand'> 
+                <Link to='/'>
+                <img className='brand-logo'
+                src={logo}
+                alt='Logo'/>
+                </Link>
+            </div>
+            
+            <button className='bars'
+            onClick={()=> setSidebar(!sidebar)}><FaBars /></button>
+            <Sidebar />
+        </nav> */}

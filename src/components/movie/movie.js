@@ -110,7 +110,7 @@ const Movie = () => {
                 </div>
             </div>
             <div className='videoWrapper'>
-                <div className='frame'>
+                <div className='frame'> 
                     {trailerUrl && <YouTube  className='Youtube-frame' videoId={trailerUrl} options={options} />}
                 </div>
                 <div>
@@ -147,6 +147,7 @@ const Movie = () => {
                                 onClick={()=>setMore(!more)}>
                                 {more?'Less':'More'}
                                 </button>
+                                
                             </p>
                         </div>
                     )}

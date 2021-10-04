@@ -49,16 +49,20 @@
 @media screen and (max-width: 725px) {
   .fav-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-gap: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-gap: 30px 0px;
     align-items: center;
   }
   .fav-img {
-    height: 230px;
-    width: 153px;
+    height: 180px;
+    width: 118px;
+    margin: 0 auto;
   }
   .fav-text h1 {
     font-size: 25px;
     margin-bottom: 20px;
+  }
+  .grid-block {
+    width: 90%;
   }
 }
