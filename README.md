@@ -1,3 +1,16 @@
+# HOME THEATRE - A movie database website
+
+Search for movies and TV shows from a massive database of shows. 
+Save your favorite movies and TV shows in your watchlist and access them later when you want. 
+
+# DESCRIPTION
+
+An "imdb + netflix - streaming" site that uses TMDB API to fetch movies/TV shows and their details. This site is built using React.js and for backend, firebase firestore is used. The auth and database storage is provided by firebase.
+
+Site is hosted on firebase.
+
+View the site live here [Home Theatre](https://moviedb-23ce8.web.app).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
