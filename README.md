@@ -9,7 +9,7 @@ An "imdb + netflix - streaming" site that uses TMDB API to fetch movies/TV shows
 
 Site is hosted on firebase.
 
-view the site live here 
+View the site live here [Home Theatre](https://moviedb-23ce8.web.app).
 
 # Getting Started with Create React App
 
