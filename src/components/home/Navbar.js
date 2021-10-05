@@ -3,7 +3,6 @@ import './Navbar.css'
 import { FaBars } from 'react-icons/fa'
 import logo from './home2.svg'
 import {MdClose} from 'react-icons/md'
-import Sidebar from './sidebar';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
 import Search from '../menu/search';
@@ -33,9 +32,9 @@ const Navbar = () => {
             </div>
             <button className='bars'
             onClick={()=> setSidebar(!sidebar)}><FaBars /></button>
-            <div className={sidebar ? 'navbar-links actives' : 'navbar-links'}>
+            <div className={sidebar ? ' actives' : 'navbar-links'}>
                 <button className='cross'
-                    onClick={()=> setSidebar(!sidebar)}><MdClose /></button>
+                onClick={()=> setSidebar(!sidebar)}><MdClose /></button>
                     <ul className='links-menu'>
                         <li>
                             {currentuser ? <Search /> : null}
@@ -60,17 +59,3 @@ const Navbar = () => {
 }
  
 export default Navbar;
-
-{/* <nav className='nav'>
-            <div className='brand'> 
-                <Link to='/'>
-                <img className='brand-logo'
-                src={logo}
-                alt='Logo'/>
-                </Link>
-            </div>
-            
-            <button className='bars'
-            onClick={()=> setSidebar(!sidebar)}><FaBars /></button>
-            <Sidebar />
-        </nav> */}
