@@ -144,11 +144,12 @@ article.next {
 
 @media screen and (max-width: 725px) {
   .menu {
-    height: 68vh;
+    height: 66vh;
   }
   .block {
-    top: 30%;
+    top: 34%;
     height: 40%;
+    bottom: 0;
   }
 
   .movie-img {
